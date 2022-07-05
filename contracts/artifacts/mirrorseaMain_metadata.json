@@ -1003,11 +1003,11 @@
 			]
 		},
 		"contracts/mirrorseaMain.sol": {
-			"keccak256": "0x8a3de9b24c8dcf2a315dd8bd6bf81bf0246e5f52c4c2ccbc1ad8ae369ad04939",
+			"keccak256": "0xa412b44fd035701bf2159bdbfd327c81abc4b775735cbc86d311d473bb41b68b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://06e7baf5ab5dec8424e67d54fad376fc3dcdc6ad4d9023c74af46871d1c8b7d4",
-				"dweb:/ipfs/QmZg8V3i1wnCXhfQ5m8Qy9nBP7kpducvrLLGXVYxDtVbjd"
+				"bzz-raw://1342f0c0b6cfaf512ca2cc00a3fc937ee47ffe1229e794cdcdb39c7fb28c4906",
+				"dweb:/ipfs/QmYRDcQwmE3RsueQupDCZNNebcxQVm985uFhDP9Pmvr2we"
 			]
 		}
 	},

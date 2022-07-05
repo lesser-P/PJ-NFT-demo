@@ -277,6 +277,8 @@ async function main() {
     console.log("contracts:", contracts);
     console.log("/////////////////////END/////////////////////");
 
+    //給機器人打錢，授權mirrorseaMain 扣他usc 作為手續費
+
     return;
 
 

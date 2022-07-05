@@ -270,6 +270,74 @@ contract mirrorseaMain is Initializable, OwnableUpgradeable {
         return true;
     }
 
+    function closeLong(OrderInfo storage order, uint256 _price18) internal {
+        address _user = order.user;
+        uint256 diffPrice18;
+        uint256 diffMargin;
+        uint256 mintAmt;
+        uint256 order_amt = order.amt;
+        uint256 order_closePrice18 = _price18;
+        uint256 order_margin = order.margin;
+        uint256 order_openPrice18 = order.openPrice18;
+        uint256 fee = order_closePrice18
+            .mul(order_amt)
+            .mul(feePercent)
+            .div(PRECISION)
+            .div(1e18);
+        if (order_closePrice18 > order_openPrice18) {
+            diffPrice18 = order_closePrice18.sub(order_openPrice18);
+            diffMargin = diffPrice18.mul(order_amt).div(1e18);
+            mintAmt = order_margin.add(diffMargin);
+            usc.safeTransferFrom(msg.sender, address(helperLogic), fee);
+            IUSC(address(usc)).mint(_user, mintAmt);
+        } else {
+            diffPrice18 = order_openPrice18.sub(order_closePrice18);
+            diffMargin = diffPrice18.mul(order_amt);
+
+            if (diffMargin > order_margin) {
+                mintAmt = 0;
+            } else {
+                mintAmt = order_margin.sub(diffMargin);
+                usc.safeTransferFrom(msg.sender, address(helperLogic), fee);
+                IUSC(address(usc)).mint(_user, mintAmt);
+            }
+        }
+    }
+
+    function closeShort(OrderInfo storage order, uint256 _price18) internal {
+        address _user = order.user;
+        uint256 diffPrice18;
+        uint256 diffMargin;
+        uint256 mintAmt;
+        uint256 order_amt = order.amt;
+        uint256 order_closePrice18 = _price18;
+        uint256 order_margin = order.margin;
+        uint256 order_openPrice18 = order.openPrice18;
+        uint256 fee = order_closePrice18
+            .mul(order_amt)
+            .mul(feePercent)
+            .div(PRECISION)
+            .div(1e18);
+        if (order_closePrice18 < order_openPrice18) {
+            diffPrice18 = order_openPrice18.sub(order_closePrice18);
+            diffMargin = diffPrice18.mul(order_amt).div(1e18);
+            mintAmt = order_margin.add(diffMargin);
+            usc.safeTransferFrom(msg.sender, address(helperLogic), fee);
+            IUSC(address(usc)).mint(_user, mintAmt);
+        } else {
+            diffPrice18 = order_closePrice18.sub(order_openPrice18);
+            diffMargin = diffPrice18.mul(order_amt).div(1e18);
+
+            if (diffMargin > order_margin) {
+                mintAmt = 0;
+            } else {
+                mintAmt = order_margin.sub(diffMargin);
+                usc.safeTransferFrom(msg.sender, address(helperLogic), fee);
+                IUSC(address(usc)).mint(_user, mintAmt);
+            }
+        }
+    }
+
     function _closePosition(
         bool _marketState,
         OrderInfo storage order,
@@ -292,63 +360,15 @@ contract mirrorseaMain is Initializable, OwnableUpgradeable {
             ),
             "oracle err"
         );
+        uint256 id_ = _id;
+        address _user = order.user;
 
-        order.closePrice18 = _price18;
-        uint256 diffPrice18;
-        uint256 diffMargin;
-        uint256 mintAmt;
-        uint256 order_amt = order.amt;
-        uint256 order_closePrice18 = order.closePrice18;
-        uint256 fee = order_closePrice18
-            .mul(order_amt)
-            .mul(feePercent)
-            .div(PRECISION)
-            .div(1e18);
-        if (order.direction == 1) {
-            if (order.closePrice18 > order.openPrice18) {
-                diffPrice18 = order.closePrice18.sub(order.openPrice18);
-                diffMargin = diffPrice18.mul(order_amt).div(1e18);
-                mintAmt = order.margin.add(diffMargin);
-                // IUSC(address(usc)).mint(address(helperLogic), fee);
-                // IUSC(address(usc)).mint(order.user, mintAmt.sub(fee));
-                usc.safeTransferFrom(msg.sender, address(helperLogic), fee);
-                IUSC(address(usc)).mint(order.user, mintAmt);
-            } else {
-                diffPrice18 = order.openPrice18.sub(order.closePrice18);
-                diffMargin = diffPrice18.mul(order_amt);
+        uint256 order_direction = order.direction;
 
-                if (diffMargin > order.margin) {
-                    mintAmt = 0;
-                } else {
-                    mintAmt = order.margin.sub(diffMargin);
-                    // IUSC(address(usc)).mint(address(helperLogic), fee);
-                    // IUSC(address(usc)).mint(order.user, mintAmt.sub(fee));
-                    usc.safeTransferFrom(msg.sender, address(helperLogic), fee);
-                    IUSC(address(usc)).mint(order.user, mintAmt);
-                }
-            }
+        if (order_direction == 1) {
+            closeLong(order, _price18);
         } else {
-            if (order.closePrice18 < order.openPrice18) {
-                diffPrice18 = order.openPrice18.sub(order.closePrice18);
-                diffMargin = diffPrice18.mul(order_amt).div(1e18);
-                mintAmt = order.margin.add(diffMargin);
-                // IUSC(address(usc)).mint(address(helperLogic), fee);
-                // IUSC(address(usc)).mint(order.user, mintAmt.sub(fee));
-                usc.safeTransferFrom(msg.sender, address(helperLogic), fee);
-                IUSC(address(usc)).mint(order.user, mintAmt);
-            } else {
-                diffPrice18 = order.closePrice18.sub(order.openPrice18);
-                diffMargin = diffPrice18.mul(order_amt).div(1e18);
-                if (diffMargin > order.margin) {
-                    mintAmt = 0;
-                } else {
-                    mintAmt = order.margin.sub(diffMargin);
-                    // IUSC(address(usc)).mint(address(helperLogic), fee);
-                    // IUSC(address(usc)).mint(order.user, mintAmt.sub(fee));
-                    usc.safeTransferFrom(msg.sender, address(helperLogic), fee);
-                    IUSC(address(usc)).mint(order.user, mintAmt);
-                }
-            }
+            closeShort(order, _price18);
         }
 
         helperLogic.jointExecution();
@@ -357,18 +377,17 @@ contract mirrorseaMain is Initializable, OwnableUpgradeable {
         order.closePrice18 = _price18;
         order.closeTime = _timestamp;
 
-        cutListItem(_id, openOrderIdList_index, openOrderIdList);
+        cutListItem(id_, openOrderIdList_index, openOrderIdList);
         cutListItem(
-            _id,
-            myOpenOrderIdList_index[msg.sender],
-            myOpenOrderIdList[msg.sender]
+            id_,
+            myOpenOrderIdList_index[_user],
+            myOpenOrderIdList[_user]
         );
 
-        myCloseOrderIdList[msg.sender].push(_id);
+        myCloseOrderIdList[_user].push(id_);
 
-        myCloseOrderIdList_index[msg.sender][_id] = myCloseOrderIdListLength(
-            msg.sender
-        ).sub(1);
+        myCloseOrderIdList_index[_user][id_] = myCloseOrderIdListLength(_user)
+            .sub(1);
         // uint256 delIndex = openOrderIdList_index[_id];
         // uint256 lastID = openOrderIdList[openOrderIdList.length - 1];
         // openOrderIdList_index[lastID] = delIndex;
