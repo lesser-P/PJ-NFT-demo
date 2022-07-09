@@ -108,7 +108,7 @@ export class Ownable extends BaseContract {
     ): Promise<ContractTransaction>;
 
     transferOwnership(
-      newOwner: string,
+      newOwner_: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
   };
@@ -120,7 +120,7 @@ export class Ownable extends BaseContract {
   ): Promise<ContractTransaction>;
 
   transferOwnership(
-    newOwner: string,
+    newOwner_: string,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
@@ -130,7 +130,7 @@ export class Ownable extends BaseContract {
     renounceOwnership(overrides?: CallOverrides): Promise<void>;
 
     transferOwnership(
-      newOwner: string,
+      newOwner_: string,
       overrides?: CallOverrides
     ): Promise<void>;
   };
@@ -161,7 +161,7 @@ export class Ownable extends BaseContract {
     ): Promise<BigNumber>;
 
     transferOwnership(
-      newOwner: string,
+      newOwner_: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
   };
@@ -174,7 +174,7 @@ export class Ownable extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     transferOwnership(
-      newOwner: string,
+      newOwner_: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
   };

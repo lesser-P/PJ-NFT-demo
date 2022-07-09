@@ -56,7 +56,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/stabilizer.sol": "IUSC"
+			"contracts/mirrorseaMain.sol": "IUSC"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -126,20 +126,12 @@
 				"dweb:/ipfs/QmNS7ppgMivJCJgu6JzEN8MvjWM7ctsDREcNyHTcZzYXRG"
 			]
 		},
-		"@sushiswap/core/contracts/uniswapv2/interfaces/IUniswapV2Pair.sol": {
-			"keccak256": "0x08f9a63b34855eec941be8d36a04424f1a1725a2c030373fcef3afeb480ca385",
-			"license": "GPL-3.0",
-			"urls": [
-				"bzz-raw://174219f9a6c90b4d0133475da5333403aea21ba49d303f3ba28cb4e9a2a0141e",
-				"dweb:/ipfs/QmdDy25xsAfWxaKnRbGJys7d9BaPhpbGorMQCY4Au2auZL"
-			]
-		},
-		"contracts/stabilizer.sol": {
-			"keccak256": "0x7d03507ece5a12312016f0f0358393c9d9190caf9cc6823334cd94162b07ab08",
+		"contracts/mirrorseaMain.sol": {
+			"keccak256": "0xa412b44fd035701bf2159bdbfd327c81abc4b775735cbc86d311d473bb41b68b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://57bbb1f0f25eae8308d245ac1569ff6f7217d2eace2e165a6ce00660070cfbb8",
-				"dweb:/ipfs/QmURofWqTyQYRKDriGjt8rVoo4d6ziUWKpmGk27DEJDh53"
+				"bzz-raw://1342f0c0b6cfaf512ca2cc00a3fc937ee47ffe1229e794cdcdb39c7fb28c4906",
+				"dweb:/ipfs/QmYRDcQwmE3RsueQupDCZNNebcxQVm985uFhDP9Pmvr2we"
 			]
 		}
 	},

@@ -104,6 +104,36 @@
       "address": "0xC542f7184366C29dfebd60F79beAA8C4f60C8E8f",
       "txHash": "0x510bd41e63c66d13982dd357f0d23f8d31352af659e234dae2eb3facf9ab9c56",
       "kind": "transparent"
+    },
+    {
+      "address": "0x068CF7F8042b4AC0329eDd04BcD35Fc17223cEdf",
+      "txHash": "0x738696b77a8b08694030bbbf3a16576a83f56b684d5c27b52c258231af06f2b9",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x66BE43F902D2e3B169D3F49011e7F74650d53653",
+      "txHash": "0x8cb5921e4967b95bc636ed3eee1bfe11ce7dcdb37003c79655fbb2fbfbe3e04f",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xF750e7dC33f8B94dE68A8F5641EB1F79771a317d",
+      "txHash": "0xfb102869841070770d472739e8cc99e64b3e0290973c025c3e5c0104aeb55bb0",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x2aC9a6456Ca4d71c634f8bDdab1BD4aD2e67d045",
+      "txHash": "0x0bc20c8781fdd4b40f4681b087902320eece811773019f9040dd737806c35f5a",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x551f35A9A40eafD1470A5456ff830349fF24405D",
+      "txHash": "0xe68a962f855bae2d25d01ed58dfacb5b12600c5dc485d9be8e06470e3f39a116",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x0CB6E53d1183eaCf1851e844c943966690DBF123",
+      "txHash": "0xe32878520e0bd5517e62b8dc38f5523ae074e5c3c7a1ed3712ea620fc3771d09",
+      "kind": "transparent"
     }
   ],
   "impls": {
@@ -2936,6 +2966,326 @@
           },
           "t_mapping(t_address,t_bool)": {
             "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "766d59f2465cd6598c088cff7cee0dd5124390fe3b26efae88d77114cd35e8e7": {
+      "address": "0x1C91817a61F8BD81efab6ECa434CffB15Cd99ECa",
+      "txHash": "0x285b014173a72a2d6568dcc4307322b6a6905fa69b3e10076d582ef08d955f0e",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:10"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:15"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:31"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:82"
+          },
+          {
+            "label": "alphaSEA",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_address",
+            "contract": "SEAPreSale",
+            "src": "contracts/IDO/SEAPreSale.sol:14"
+          },
+          {
+            "label": "DAOAddress",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_address",
+            "contract": "SEAPreSale",
+            "src": "contracts/IDO/SEAPreSale.sol:15"
+          },
+          {
+            "label": "usdc",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_address",
+            "contract": "SEAPreSale",
+            "src": "contracts/IDO/SEAPreSale.sol:16"
+          },
+          {
+            "label": "minAmount",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_uint256",
+            "contract": "SEAPreSale",
+            "src": "contracts/IDO/SEAPreSale.sol:18"
+          },
+          {
+            "label": "maxAmount",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_uint256",
+            "contract": "SEAPreSale",
+            "src": "contracts/IDO/SEAPreSale.sol:19"
+          },
+          {
+            "label": "salePrice",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_uint256",
+            "contract": "SEAPreSale",
+            "src": "contracts/IDO/SEAPreSale.sol:20"
+          },
+          {
+            "label": "startTimestamp",
+            "offset": 0,
+            "slot": "107",
+            "type": "t_uint256",
+            "contract": "SEAPreSale",
+            "src": "contracts/IDO/SEAPreSale.sol:21"
+          },
+          {
+            "label": "endTimestamp",
+            "offset": 0,
+            "slot": "108",
+            "type": "t_uint256",
+            "contract": "SEAPreSale",
+            "src": "contracts/IDO/SEAPreSale.sol:22"
+          },
+          {
+            "label": "toTalAmount",
+            "offset": 0,
+            "slot": "109",
+            "type": "t_uint256",
+            "contract": "SEAPreSale",
+            "src": "contracts/IDO/SEAPreSale.sol:23"
+          },
+          {
+            "label": "sellAmount",
+            "offset": 0,
+            "slot": "110",
+            "type": "t_uint256",
+            "contract": "SEAPreSale",
+            "src": "contracts/IDO/SEAPreSale.sol:24"
+          },
+          {
+            "label": "remainingPurchasesMaxAmt",
+            "offset": 0,
+            "slot": "111",
+            "type": "t_uint256",
+            "contract": "SEAPreSale",
+            "src": "contracts/IDO/SEAPreSale.sol:25"
+          },
+          {
+            "label": "saleStarted",
+            "offset": 0,
+            "slot": "112",
+            "type": "t_bool",
+            "contract": "SEAPreSale",
+            "src": "contracts/IDO/SEAPreSale.sol:27"
+          },
+          {
+            "label": "boughtSEA",
+            "offset": 0,
+            "slot": "113",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "SEAPreSale",
+            "src": "contracts/IDO/SEAPreSale.sol:29"
+          },
+          {
+            "label": "whiteListed",
+            "offset": 0,
+            "slot": "114",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "SEAPreSale",
+            "src": "contracts/IDO/SEAPreSale.sol:30"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "29ef46c961e8b5e99021fd3b7137af2de93f5405a325e7e9812d11d384450db2": {
+      "address": "0x376Ae348B5A55a9C39509f7aD565990B341236Ee",
+      "txHash": "0xdcaef958fbe93e1385f06fc1309fdd6f9549d251d7c6918c77bd4aa3d7e135d2",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:10"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:15"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:31"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:82"
+          },
+          {
+            "label": "endTimestamp",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_uint256",
+            "contract": "aSEAMigration",
+            "src": "contracts/IDO/AlphaSEAMigration.sol:14"
+          },
+          {
+            "label": "startTimestamp",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_uint256",
+            "contract": "aSEAMigration",
+            "src": "contracts/IDO/AlphaSEAMigration.sol:15"
+          },
+          {
+            "label": "maxAmt",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_uint256",
+            "contract": "aSEAMigration",
+            "src": "contracts/IDO/AlphaSEAMigration.sol:17"
+          },
+          {
+            "label": "SEA",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_contract(IERC20Upgradeable)821",
+            "contract": "aSEAMigration",
+            "src": "contracts/IDO/AlphaSEAMigration.sol:19"
+          },
+          {
+            "label": "aSEA",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_contract(IERC20Upgradeable)821",
+            "contract": "aSEAMigration",
+            "src": "contracts/IDO/AlphaSEAMigration.sol:20"
+          },
+          {
+            "label": "isInitialized",
+            "offset": 20,
+            "slot": "105",
+            "type": "t_bool",
+            "contract": "aSEAMigration",
+            "src": "contracts/IDO/AlphaSEAMigration.sol:22"
+          },
+          {
+            "label": "senderInfo",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "aSEAMigration",
+            "src": "contracts/IDO/AlphaSEAMigration.sol:24"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_contract(IERC20Upgradeable)821": {
+            "label": "contract IERC20Upgradeable",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
             "numberOfBytes": "32"
           },
           "t_uint256": {

@@ -1,0 +1,177 @@
+{
+	"compiler": {
+		"version": "0.7.5+commit.eb77ed08"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenToPrice_",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenForPriceComparison_",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "epochPeriod_",
+						"type": "uint256"
+					}
+				],
+				"name": "priceTokenAddressForPricingTokenAddressForLastEpochUpdateBlockTimstamp",
+				"outputs": [
+					{
+						"internalType": "uint32",
+						"name": "",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "pricedTokenForPricingTokenForEpochPeriodForLastEpochPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "pricedTokenForPricingTokenForEpochPeriodForPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "uniV2CompPairAddressForLastEpochUpdateBlockTimstamp",
+				"outputs": [
+					{
+						"internalType": "uint32",
+						"name": "",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "uniV2CompatPairAddressToUpdate_",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "eopchPeriodToUpdate_",
+						"type": "uint256"
+					}
+				],
+				"name": "updateTWAP",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Intended to update the TWAP for a token based on accepting an update call from that token.  expectation is to have this happen in the _beforeTokenTransfer function of ERC20.  Provides a method for a token to register its price sourve adaptor.  Provides a function for a token to register its TWAP updater. Defaults to token itself.  Provides a function a tokent to set its TWAP epoch.  Implements automatic closeing and opening up a TWAP epoch when epoch ends.  Provides a function to report the TWAP from the last epoch when passed a token address.",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/IDO/USDCTest.sol": "ITWAPOracle"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/IDO/USDCTest.sol": {
+			"keccak256": "0x580d09b695bd4cd436d26f0e4e3192df7e0ea19c4233ad861531eec2b1d3efb0",
+			"license": "AGPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://70145ed216d8cf4df6b52fd4eba868639ecbc9d766245e0c2af92084e7d5730a",
+				"dweb:/ipfs/QmeYVNP7nD7tbVK7RNUEmk5zw8ukLdkp7c65qzx42p5rRs"
+			]
+		}
+	},
+	"version": 1
+}

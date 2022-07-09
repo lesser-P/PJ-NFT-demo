@@ -113,6 +113,62 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IStabilizer__factory>;
     getContractFactory(
+      name: "AlphaSEA",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.AlphaSEA__factory>;
+    getContractFactory(
+      name: "ASEAMigration",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ASEAMigration__factory>;
+    getContractFactory(
+      name: "SEAPreSale",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.SEAPreSale__factory>;
+    getContractFactory(
+      name: "Divine",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Divine__factory>;
+    getContractFactory(
+      name: "ERC20",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ERC20__factory>;
+    getContractFactory(
+      name: "ERC20Permit",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ERC20Permit__factory>;
+    getContractFactory(
+      name: "IERC20",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IERC20__factory>;
+    getContractFactory(
+      name: "IERC2612Permit",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IERC2612Permit__factory>;
+    getContractFactory(
+      name: "IOwnable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IOwnable__factory>;
+    getContractFactory(
+      name: "ITWAPOracle",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ITWAPOracle__factory>;
+    getContractFactory(
+      name: "Ownable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Ownable__factory>;
+    getContractFactory(
+      name: "TWAPOracleUpdater",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.TWAPOracleUpdater__factory>;
+    getContractFactory(
+      name: "USDCERC20Token",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.USDCERC20Token__factory>;
+    getContractFactory(
+      name: "VaultOwned",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.VaultOwned__factory>;
+    getContractFactory(
       name: "IhelperLogic",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IhelperLogic__factory>;
@@ -342,6 +398,76 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.IStabilizer>;
+    getContractAt(
+      name: "AlphaSEA",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.AlphaSEA>;
+    getContractAt(
+      name: "ASEAMigration",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ASEAMigration>;
+    getContractAt(
+      name: "SEAPreSale",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.SEAPreSale>;
+    getContractAt(
+      name: "Divine",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Divine>;
+    getContractAt(
+      name: "ERC20",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ERC20>;
+    getContractAt(
+      name: "ERC20Permit",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ERC20Permit>;
+    getContractAt(
+      name: "IERC20",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IERC20>;
+    getContractAt(
+      name: "IERC2612Permit",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IERC2612Permit>;
+    getContractAt(
+      name: "IOwnable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IOwnable>;
+    getContractAt(
+      name: "ITWAPOracle",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ITWAPOracle>;
+    getContractAt(
+      name: "Ownable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Ownable>;
+    getContractAt(
+      name: "TWAPOracleUpdater",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.TWAPOracleUpdater>;
+    getContractAt(
+      name: "USDCERC20Token",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.USDCERC20Token>;
+    getContractAt(
+      name: "VaultOwned",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.VaultOwned>;
     getContractAt(
       name: "IhelperLogic",
       address: string,

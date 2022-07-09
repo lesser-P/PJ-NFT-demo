@@ -366,7 +366,7 @@
       ]
     },
     "/Users/mac/Documents/GitHub/mirrorsea_contracts/contracts/uscERC20.sol": {
-      "lastModificationDate": 1656780930465,
+      "lastModificationDate": 1657348719883,
       "contentHash": "c19747b7462b52ab853e0a8a873d5906",
       "sourceName": "contracts/uscERC20.sol",
       "solcConfig": {
@@ -415,7 +415,7 @@
       ]
     },
     "/Users/mac/Documents/GitHub/mirrorsea_contracts/contracts/stabilizer.sol": {
-      "lastModificationDate": 1656780930462,
+      "lastModificationDate": 1657348682292,
       "contentHash": "2bcef233b0c0acf6504184ae88d3079c",
       "sourceName": "contracts/stabilizer.sol",
       "solcConfig": {
@@ -465,7 +465,7 @@
       ]
     },
     "/Users/mac/Documents/GitHub/mirrorsea_contracts/contracts/seaERC20.sol": {
-      "lastModificationDate": 1656780930460,
+      "lastModificationDate": 1657348709511,
       "contentHash": "660c849ccaf18700efef1b31e76ab6f1",
       "sourceName": "contracts/seaERC20.sol",
       "solcConfig": {
@@ -514,8 +514,8 @@
       ]
     },
     "/Users/mac/Documents/GitHub/mirrorsea_contracts/contracts/mirrorseaMain.sol": {
-      "lastModificationDate": 1656780930461,
-      "contentHash": "49c216db9633ab4020d320534afd5b61",
+      "lastModificationDate": 1657376857282,
+      "contentHash": "96c9a32691e2857ec4300b81b9963049",
       "sourceName": "contracts/mirrorseaMain.sol",
       "solcConfig": {
         "version": "0.8.0",
@@ -565,7 +565,7 @@
       ]
     },
     "/Users/mac/Documents/GitHub/mirrorsea_contracts/contracts/helperLogic.sol": {
-      "lastModificationDate": 1656780930466,
+      "lastModificationDate": 1657376723256,
       "contentHash": "3cf7f178874e712f351195ab3d008833",
       "sourceName": "contracts/helperLogic.sol",
       "solcConfig": {
@@ -618,7 +618,7 @@
       ]
     },
     "/Users/mac/Documents/GitHub/mirrorsea_contracts/contracts/oracle.sol": {
-      "lastModificationDate": 1656780930464,
+      "lastModificationDate": 1657348721292,
       "contentHash": "3e146c227e018b95e6d6488795c4f025",
       "sourceName": "contracts/oracle.sol",
       "solcConfig": {
@@ -1723,6 +1723,206 @@
       ],
       "artifacts": [
         "Context"
+      ]
+    },
+    "/Users/mac/Documents/GitHub/mirrorsea_contracts/contracts/IDO/AlphaSEA.sol": {
+      "lastModificationDate": 1657271088173,
+      "contentHash": "6ccdbcfc6c3a27d860d38e5da9a9ad00",
+      "sourceName": "contracts/IDO/AlphaSEA.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol",
+        "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol",
+        "@openzeppelin/contracts-upgradeable/token/ERC20/utils/SafeERC20Upgradeable.sol",
+        "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol",
+        "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol",
+        "@openzeppelin/contracts-upgradeable/utils/math/SafeMathUpgradeable.sol"
+      ],
+      "versionPragmas": [
+        "0.8.0"
+      ],
+      "artifacts": [
+        "AlphaSEA"
+      ]
+    },
+    "/Users/mac/Documents/GitHub/mirrorsea_contracts/contracts/IDO/AlphaSEAMigration.sol": {
+      "lastModificationDate": 1657376858212,
+      "contentHash": "1bd6cbc5e13a215305fb06cf57719323",
+      "sourceName": "contracts/IDO/AlphaSEAMigration.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol",
+        "@openzeppelin/contracts-upgradeable/token/ERC20/utils/SafeERC20Upgradeable.sol",
+        "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol",
+        "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol",
+        "@openzeppelin/contracts-upgradeable/utils/math/SafeMathUpgradeable.sol"
+      ],
+      "versionPragmas": [
+        "0.8.0"
+      ],
+      "artifacts": [
+        "aSEAMigration"
+      ]
+    },
+    "/Users/mac/Documents/GitHub/mirrorsea_contracts/contracts/IDO/SEAPreSale.sol": {
+      "lastModificationDate": 1657378685807,
+      "contentHash": "f1eb4be19686bce5e9d3e1f6bfbe0485",
+      "sourceName": "contracts/IDO/SEAPreSale.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol",
+        "@openzeppelin/contracts-upgradeable/token/ERC20/utils/SafeERC20Upgradeable.sol",
+        "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol",
+        "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol",
+        "@openzeppelin/contracts-upgradeable/utils/math/SafeMathUpgradeable.sol"
+      ],
+      "versionPragmas": [
+        "0.8.0"
+      ],
+      "artifacts": [
+        "SEAPreSale"
+      ]
+    },
+    "/Users/mac/Documents/GitHub/mirrorsea_contracts/contracts/IDO/USDCTest.sol": {
+      "lastModificationDate": 1657270167716,
+      "contentHash": "4948dc01e8c0a844fd81e7f34612b5e5",
+      "sourceName": "contracts/IDO/USDCTest.sol",
+      "solcConfig": {
+        "version": "0.7.5",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.7.5"
+      ],
+      "artifacts": [
+        "Counters",
+        "Divine",
+        "ERC20",
+        "ERC20Permit",
+        "EnumerableSet",
+        "IERC20",
+        "IERC2612Permit",
+        "IOwnable",
+        "ITWAPOracle",
+        "Ownable",
+        "SafeMath",
+        "TWAPOracleUpdater",
+        "USDCERC20Token",
+        "VaultOwned"
       ]
     }
   }
