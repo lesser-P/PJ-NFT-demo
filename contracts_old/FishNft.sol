@@ -42,11 +42,10 @@ library Random {
     /**
      * Initialize the pool from the latest "num" blocks.
      */
-    function initLatest(uint256 num, uint256 seed)
-        internal
-        view
-        returns (bytes32[] memory)
-    {
+    function initLatest(
+        uint256 num,
+        uint256 seed
+    ) internal view returns (bytes32[] memory) {
         return init(block.number - num, block.number - 1, seed);
     }
 
@@ -93,7 +92,7 @@ contract FishNft is
     address public FISH;
     uint256 public maxPreSale;
     uint256 public preSaleEnd;
-    bool public stateOpen;
+    bool public stateOpen; //预售期
     /**
     userInfo
      */
@@ -108,12 +107,12 @@ contract FishNft is
      */
     struct NftInfo {
         string fishStr;
-        uint256 remainingReward;
-        uint256 lv;
-        uint256 random;
+        uint256 remainingReward; //释放nft所获得的奖励
+        uint256 lv; //nft等级
+        uint256 random; //随机数，备用
     }
 
-    mapping(uint256 => uint256) public releaseCycle;
+    mapping(uint256 => uint256) public releaseCycle; //释放周期
     mapping(uint256 => NftInfo) internal _nftInfo;
     mapping(address => UserInfo) internal _userInfo;
 
@@ -127,7 +126,7 @@ contract FishNft is
         maxPreSale = 1000;
         stateOpen = false;
         __ERC721_init(_name, _symbol);
-        __Ownable_init();
+        __Ownable_init(); //是代理合约并且由Owner引入就必须要有Owner初始化
         executor[msg.sender] = true;
         releaseCycle[0] = 14 days;
         releaseCycle[1] = 10 days;
@@ -198,11 +197,10 @@ contract FishNft is
         return true;
     }
 
-    function setReleaseCycle(uint256 _lv, uint256 _releaseSecond)
-        public
-        onlyOwner
-        returns (bool)
-    {
+    function setReleaseCycle(
+        uint256 _lv,
+        uint256 _releaseSecond
+    ) public onlyOwner returns (bool) {
         releaseCycle[_lv] = _releaseSecond;
         return true;
     }
@@ -227,11 +225,10 @@ contract FishNft is
         return true;
     }
 
-    function setExecutor(address _address, bool _type)
-        external
-        onlyOwner
-        returns (bool)
-    {
+    function setExecutor(
+        address _address,
+        bool _type
+    ) external onlyOwner returns (bool) {
         executor[_address] = _type;
         return true;
     }
@@ -250,11 +247,9 @@ contract FishNft is
         }
     }
 
-    function getFishBodyPoint(uint256 seed)
-        internal
-        view
-        returns (uint256 ret)
-    {
+    function getFishBodyPoint(
+        uint256 seed
+    ) internal view returns (uint256 ret) {
         bytes32[] memory pool = Random.initLatest(10, seed);
 
         uint256 RNG = uint256(Random.uniform(pool, 1, 100));
@@ -379,13 +374,9 @@ contract FishNft is
     /**
      * @dev See {IERC721Metadata-tokenURI}.
      */
-    function tokenURI(uint256 tokenId)
-        public
-        view
-        virtual
-        override
-        returns (string memory)
-    {
+    function tokenURI(
+        uint256 tokenId
+    ) public view virtual override returns (string memory) {
         require(
             _exists(tokenId),
             "ERC721URIStorage: URI query for nonexistent token"
@@ -405,11 +396,10 @@ contract FishNft is
         return true;
     }
 
-    function burnFrom(address _user, uint256 _id)
-        external
-        onlyExecutor
-        returns (bool)
-    {
+    function burnFrom(
+        address _user,
+        uint256 _id
+    ) external onlyExecutor returns (bool) {
         require(_user == ownerOf(_id), "No approved");
         checkState();
         UserInfo storage user = _userInfo[_user];

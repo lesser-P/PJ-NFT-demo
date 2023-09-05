@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.0;
+pragma solidity ^0.8.0;
 import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
@@ -120,11 +120,10 @@ contract usdcBuyNftLogic is Initializable, OwnableUpgradeable {
     uint256 public toOpPec;
     bool public stateOpen;
 
-    function sortTokens(address tokenA, address tokenB)
-        internal
-        pure
-        returns (address token0, address token1)
-    {
+    function sortTokens(
+        address tokenA,
+        address tokenB
+    ) internal pure returns (address token0, address token1) {
         require(tokenA != tokenB, "UniswapV2Library: IDENTICAL_ADDRESSES");
         (token0, token1) = tokenA < tokenB
             ? (tokenA, tokenB)
@@ -145,21 +144,18 @@ contract usdcBuyNftLogic is Initializable, OwnableUpgradeable {
         return true;
     }
 
-    function setOracle(IOracle _newOracle, bytes memory _newOracleData)
-        public
-        onlyOwner
-        returns (bool)
-    {
+    function setOracle(
+        IOracle _newOracle,
+        bytes memory _newOracleData
+    ) public onlyOwner returns (bool) {
         oracle = _newOracle;
         oracleData = _newOracleData;
         return true;
     }
 
-    function setToLiquidityPec(uint256 _toLiquidityPec)
-        public
-        onlyOwner
-        returns (bool)
-    {
+    function setToLiquidityPec(
+        uint256 _toLiquidityPec
+    ) public onlyOwner returns (bool) {
         toLiquidityPec = _toLiquidityPec;
         return true;
     }
@@ -189,20 +185,16 @@ contract usdcBuyNftLogic is Initializable, OwnableUpgradeable {
         return true;
     }
 
-    function setMultiSignature(address _multiSignature)
-        public
-        onlyOwner
-        returns (bool)
-    {
+    function setMultiSignature(
+        address _multiSignature
+    ) public onlyOwner returns (bool) {
         multiSignature = _multiSignature;
         return true;
     }
 
-    function setMultiSignatureToSToken(address _multiSignatureToSToken)
-        public
-        onlyOwner
-        returns (bool)
-    {
+    function setMultiSignatureToSToken(
+        address _multiSignatureToSToken
+    ) public onlyOwner returns (bool) {
         multiSignatureToSToken = _multiSignatureToSToken;
         return true;
     }
@@ -242,20 +234,18 @@ contract usdcBuyNftLogic is Initializable, OwnableUpgradeable {
         return true;
     }
 
-    function setWhitelistLevel(address _user, uint256 _lev)
-        public
-        onlyOwner
-        returns (bool)
-    {
+    function setWhitelistLevel(
+        address _user,
+        uint256 _lev
+    ) public onlyOwner returns (bool) {
         whitelistLevel[_user] = _lev;
         return true;
     }
 
-    function setWhitelistDiscount(uint256 _val, uint256 _lev)
-        public
-        onlyOwner
-        returns (bool)
-    {
+    function setWhitelistDiscount(
+        uint256 _val,
+        uint256 _lev
+    ) public onlyOwner returns (bool) {
         whitelistDiscount[_val] = _lev;
         return true;
     }

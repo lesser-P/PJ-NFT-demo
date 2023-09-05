@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.0;
+pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol";
@@ -26,11 +26,10 @@ contract FishERC20 is Initializable, OwnableUpgradeable, ERC20Upgradeable {
         _mint(_to, _totalSupply);
     }
 
-    function setExecutor(address _address, bool _type)
-        external
-        onlyOwner
-        returns (bool)
-    {
+    function setExecutor(
+        address _address,
+        bool _type
+    ) external onlyOwner returns (bool) {
         executor[_address] = _type;
         return true;
     }
@@ -40,11 +39,10 @@ contract FishERC20 is Initializable, OwnableUpgradeable, ERC20Upgradeable {
         _;
     }
 
-    function mint(address account_, uint256 amount_)
-        external
-        onlyExecutor
-        returns (bool)
-    {
+    function mint(
+        address account_,
+        uint256 amount_
+    ) external onlyExecutor returns (bool) {
         _mint(account_, amount_);
         return true;
     }

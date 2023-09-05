@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 // Using the same Copyleft License as in the original Repository
-pragma solidity 0.8.0;
+pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 import "./libraries/IOracle.sol";
 import "@sushiswap/core/contracts/uniswapv2/interfaces/IUniswapV2Factory.sol";
@@ -52,10 +52,11 @@ contract FISHOracle is Initializable {
     IUniswapV2Pair public FISH_USDC;
     address public FISH;
 
-    function initialize(IUniswapV2Pair _FISH_USDC, address _FISH)
-        external
-        initializer
-    {
+    function initialize(
+        IUniswapV2Pair _FISH_USDC,
+        address _FISH
+    ) external initializer {
+        //代币对地址
         FISH_USDC = _FISH_USDC;
         FISH = _FISH;
     }
@@ -156,11 +157,9 @@ contract FISHOracle is Initializable {
     }
 
     // Check the current spot exchange rate without any state changes
-    function peekSpot(bytes calldata data)
-        external
-        view
-        returns (uint256 rate)
-    {
+    function peekSpot(
+        bytes calldata data
+    ) external view returns (uint256 rate) {
         (uint256 reserve0, uint256 reserve1, ) = FISH_USDC.getReserves();
 
         (reserve0, reserve1) = address(FISH) == FISH_USDC.token0()
